@@ -18,9 +18,11 @@ export class PorPaisComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buscar(){
+  buscar(termino: string){
     this.hayError = false;
+    this.termino = termino;
     // console.log(this.termino);
+    //se puede usar this.termino o termino son iguales
     this.paisService.buscarPais(this.termino).
     subscribe((paisesD) => {
       if(!paisesD.length){
@@ -31,6 +33,10 @@ export class PorPaisComponent implements OnInit {
       this.paises = paisesD;
 
     });
+  }
+
+  sugerencias(termino: string){
+    this.hayError = false;
   }
 
 }

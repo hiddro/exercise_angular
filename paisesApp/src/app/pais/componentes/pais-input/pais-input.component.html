@@ -4,5 +4,6 @@
             name="termino"
             class="form-control"
             [(ngModel)]="termino"
-            placeholder="Buscar pais..."/>
+            (input)="teclaPresionada()"
+            [placeholder]="placeholder"/>
 </form>

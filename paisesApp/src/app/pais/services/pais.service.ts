@@ -18,4 +18,16 @@ export class PaisService {
 
     return this.http.get<Country[]>(url);
   }
+
+  buscarCapital(termino: string): Observable<Country[]>{
+    const url = `${this.apiUrl}/capital/${termino}`;
+
+    return this.http.get<Country[]>(url);
+  }
+
+  buscarPaisCode(id: string): Observable<Country>{
+    const url = `${this.apiUrl}/alpha/${id}`;
+
+    return this.http.get<Country>(url);
+  }
 }
